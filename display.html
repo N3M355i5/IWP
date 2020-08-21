@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FORM</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fs.css">
+    <title>FORM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda+One&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,600&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@600&display=swap" rel="stylesheet">
+    <script>
+        function welcome()
+        {
+            alert("Successfully loaded !");
+        }
+        function goodbye()
+        {
+            alert("Goodbye user !");
+        }
+    </script>
+    <style type="text/css">
+    	.display {
+    		padding: 20px;
+    	}
+    </style>
+</head>
+<body onload="welcome()" onunload="goodbye()">
+	<header>
+        <nav id="header-nav" class="navbar navbar-expand-md navbar-light">
+            <div class="container-fluid">
+                <div class="navbar-brand">
+                    <a href="index.html" >
+                        <h1>Class Activity</h1>
+                    </a>
+                </div>
+            </div> 
+        </nav>
+    </header>
+    <div id="main-content" class="container">
+        <h2 id="page-title" class="text-center">Form</h2>
+        <div id="main-text">
+          <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0"class="center" src="https://findlogovector.com/wp-content/uploads/2019/03/vit-bhopal-logo-vector.png" alt="Logo" width="250" height="200" >
+          <div id="display" class="text-center">
+          	Welcome <span id="full-name"></span><br>
+          	Registration No: <span id="regno"></span><br>
+          	Email Id: <span id="email"></span><br>
+          	Date: <span id="date"></span><br>
+          	Branch: <span id="branch"></span><br>
+          	Knowledge: <span id="know"></span><br>
+          </div>
+          	<script>
+          		document.getElementById('full-name').innerHTML = localStorage.getItem("fname") + " " + localStorage.getItem("lname");
+          		document.getElementById('regno').innerHTML = localStorage.getItem("regno");
+          		document.getElementById('email').innerHTML = localStorage.getItem("email");
+          		document.getElementById('date').innerHTML = localStorage.getItem("date");
+          		document.getElementById('branch').innerHTML = localStorage.getItem("rad");
+          		document.getElementById('know').innerHTML = localStorage.getItem("gridCheck1") + " " + localStorage.getItem("gridCheck2") + " " + localStorage.getItem("gridCheck3") + " " + localStorage.getItem("gridCheck4");
+
+          	</script>
+        </div>
+	</div>
+	<script src="js/jquery-3.5.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
