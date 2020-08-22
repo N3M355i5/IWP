@@ -65,12 +65,14 @@
             var date1 = document.getElementById("date-input").value;
             localStorage.setItem("date", date1);
             var cheVal = null;
-            var input = document.getElementByClassName("form-check-label");
-            for (var i=0; input[i]; ++i ) {
-              cheVal = input[i].value;
-              localStorage.setItem("p[i]", cheVal);
-              break;
+            var checks = document.getElementsByClassName('checks');
+            var str = '';
+            for ( i = 0; i < 4; i++) {
+              if ( checks[i].checked === true ) {
+                  str += checks[i].value + " ";
+              }
             }
+            localStorage.setItem("check", str);
         }
     </script>  
 </head>
@@ -175,19 +177,19 @@
              -->      <label for="smFormGroup" class="col-sm-2 col-form-label col-form-label-sm">Prior knowlegde of</label>
             <div class="col-sm-10">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck1">
+                <input class="form-check-input checks" type="checkbox" id="gridCheck1" value="HTML">
                 <label class="form-check-label" for="gridCheck1">HTML</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck2">
+                <input class="form-check-input checks" type="checkbox" id="gridCheck2" value="CSS">
                 <label class="form-check-label" for="gridCheck2">CSS</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck3">
+                <input class="form-check-input checks" type="checkbox" id="gridCheck3" value="JS">
                 <label class="form-check-label" for="gridCheck3">JavaScript</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck4">
+                <input class="form-check-input checks" type="checkbox" id="gridCheck4" value="PHP">
                 <label class="form-check-label" for="gridCheck4">PHP</label>
             </div>
         </div>
@@ -195,7 +197,7 @@
     <div class="form-group row">
         <div class="col-sm-6" id="buttons">
           <button type="reset" class="btn btn-primary" id="reset">Reset</button>
-      </div>
+        </div>
         <div class="col-sm-6">
           <button type="submit" class="btn btn-primary" onclick="passVal();">Submit Form</button>
         </div>

@@ -44,12 +44,14 @@
         <div id="main-text">
           <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0"class="center" src="https://findlogovector.com/wp-content/uploads/2019/03/vit-bhopal-logo-vector.png" alt="Logo" width="250" height="200" >
           <div id="display" class="text-center">
-          	Welcome <span id="full-name"></span><br>
-          	Registration No: <span id="regno"></span><br>
-          	Email Id: <span id="email"></span><br>
-          	Date: <span id="date"></span><br>
-          	Branch: <span id="branch"></span><br>
-          	Knowledge: <span id="know"></span><br>
+          	<div class="typewriter" style="font-size: 20px">
+          	Welcome <br><span id="full-name" class="typewriter-text"></span><br>
+          	Registration No: <br><span id="regno" class="typewriter-text"></span><br>
+          	Email Id: <br><span id="email" class="typewriter-text"></span><br>
+          	Date: <br><span id="date" class="typewriter-text"></span><br>
+          	Branch: <br><span id="branch" class="typewriter-text"></span><br>
+          	Knowledge: <br><span id="know" class="typewriter-text"></span><br>
+          	</div>
           </div>
           	<script>
           		document.getElementById('full-name').innerHTML = localStorage.getItem("fname") + " " + localStorage.getItem("lname");
@@ -57,9 +59,16 @@
           		document.getElementById('email').innerHTML = localStorage.getItem("email");
           		document.getElementById('date').innerHTML = localStorage.getItem("date");
           		document.getElementById('branch').innerHTML = localStorage.getItem("rad");
-          		document.getElementById('know').innerHTML = localStorage.getItem("gridCheck1") + " " + localStorage.getItem("gridCheck2") + " " + localStorage.getItem("gridCheck3") + " " + localStorage.getItem("gridCheck4");
-
+          		document.getElementById('know').innerHTML = localStorage.getItem("check");
+          		/*function mail() {
+          			var str2=localStorage.getItem("fname")+"\n"+localStorage.getItem("lname");
+          			var str1 = "mailto:" + localStorage.getItem("email") + "?subject=My Info&body=";
+          			window.open(str1);
+          		}*/
           	</script>
+          	<!-- <div class="buttons">
+          	<BUTTON name="SEND ME" onclick="mail();" class="btn btn-primary">SEND ME</BUTTON>
+          </div> -->
         </div>
 	</div>
 	<script src="js/jquery-3.5.1.js"></script>
